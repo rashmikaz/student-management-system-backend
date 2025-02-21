@@ -44,3 +44,13 @@ export async function StudentUpdate(email: string, c: Student){
         console.log("error updating student", err);
     }
 }
+export async function StudentDelete(email: string) {
+    try{
+        await prisma.student.delete({
+            where: {email: email}
+        });
+        console.log('student deleted :',email);
+    }catch(err){
+        console.log("error deleting student", err);
+    }
+}
