@@ -20,3 +20,11 @@ export async function StudentAdd(c: Student ){
     }
 
 }
+
+export async function getAllStudents(){
+    try{
+        return await prisma.student.findMany();
+    }catch(err){
+        console.log("error getting students from prisma data",err);
+    }
+}
