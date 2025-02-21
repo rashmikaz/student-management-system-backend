@@ -28,3 +28,19 @@ export async function getAllStudents(){
         console.log("error getting students from prisma data",err);
     }
 }
+export async function StudentUpdate(email: string, c: Student){
+    try{
+        await prisma.student.update({
+            where:{ email : c.email},
+            data:{
+                name: c.name,
+                nic: c.nic,
+                email: c.email,
+                phone: c.phone
+
+            }
+        })
+    }catch(err){
+        console.log("error updating student", err);
+    }
+}
