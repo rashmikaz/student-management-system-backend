@@ -22,3 +22,11 @@ export async function TeacherAdd(t: Teacher ){
     }
 
 }
+
+export async function getAllTeachers(){
+    try{
+        return await prisma.teacher.findMany();
+    }catch(err){
+        console.log("error getting teachers from prisma data",err);
+    }
+}
