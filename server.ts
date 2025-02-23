@@ -1,5 +1,6 @@
 import express from "express";
 import studentRoutes from "./routes/Student-routes";
+import teacherRoutes from "./routes/Teacher-routes";
 
 const app = express();
 var cors = require("cors")
@@ -14,6 +15,7 @@ const corsOption={
 app.use(cors(corsOption));
 
 app.use("/Student",studentRoutes);
+app.use("/Teacher",teacherRoutes);
 
 app.listen(3000,(err=>{
     console.log("server port 3000") ;

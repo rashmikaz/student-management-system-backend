@@ -54,4 +54,5 @@ router.delete('/delete/:email',async (req,res,next)=>{
         console.log("error deleting teacher", err);
     }
 })
+export default router;
 
