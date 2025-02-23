@@ -48,3 +48,14 @@ export async function TeacherUpdate(email: string, t: Teacher){
         console.log("error updating teacher", err);
     }
 }
+export async function TeacherDelete(email: string) {
+    try{
+        await prisma.teacher.delete({
+            where: {email: email}
+        });
+        console.log('teacher deleted :',email);
+    }catch(err){
+        console.log("error deleting teacher", err);
+    }
+}
+
