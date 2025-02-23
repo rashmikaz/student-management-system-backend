@@ -28,3 +28,17 @@ router.get('/view',async (req,res,next)=>{
     }
 
 })
+router.put('/update/:email',async (req,res,next)=>{
+    const email: string = req.params.email;
+    const teacher : Teacher = req.body;
+
+    try{
+        await TeacherUpdate(email, teacher);
+        res.send('teacher Updated');
+        console.log("teacher updated");
+
+    }catch(err){
+        console.log("error updating teacher", err);
+    }
+
+})
