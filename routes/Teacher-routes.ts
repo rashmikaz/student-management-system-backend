@@ -17,3 +17,14 @@ router.post('/add',async (req,res,next)=>{
         res.status(400).send("error adding teacher");
     }
 })
+
+router.get('/view',async (req,res,next)=>{
+
+    try{
+        const teachers=  await getAllTeachers();
+        res.json(teachers);
+    }catch(err){
+        console.log("error getting teachers", err);
+    }
+
+})
