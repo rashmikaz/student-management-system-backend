@@ -47,3 +47,13 @@ export async function UserUpdate(email: string, u: User){
         console.log("error updating user", err);
     }
 }
+export async function UserDelete(email: string) {
+    try{
+        await prisma.user.delete({
+            where: {email: email}
+        });
+        console.log('user deleted :',email);
+    }catch(err){
+        console.log("error deleting user", err);
+    }
+}
