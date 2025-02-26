@@ -21,3 +21,11 @@ export async function UserAdd(u: User ){
     }
 
 }
+
+export async function getAllUserss(){
+    try{
+        return await prisma.user.findMany();
+    }catch(err){
+        console.log("error getting users from prisma data",err);
+    }
+}
