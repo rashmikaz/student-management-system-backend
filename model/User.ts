@@ -1,4 +1,4 @@
-export class Teacher{
+export class User{
     id!:number;
     name!:string;
     nic!:string
