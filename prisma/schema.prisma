@@ -29,3 +29,11 @@ model Teacher {
   address String
   subject String
 }
+model User {
+  id    Int    @id @default(autoincrement())
+  name  String
+  nic   String
+  email String @unique
+  phone String
+  password String
+}
