@@ -17,3 +17,13 @@ router.post('/add',async (req,res,next)=>{
         res.status(400).send("error adding user");
     }
 })
+router.get('/view',async (req,res,next)=>{
+
+    try{
+        const users=  await getAllUsers();
+        res.json(users);
+    }catch(err){
+        console.log("error getting users", err);
+    }
+
+})
