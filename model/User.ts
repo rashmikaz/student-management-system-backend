@@ -1,8 +1,5 @@
-export class User{
-    id!:number;
-    name!:string;
-    nic!:string
-    email!:string;
-    phone!:string;
-    password!:string;
+export interface User {
+    id?: number;
+    email: string;
+    password: string;
 }
