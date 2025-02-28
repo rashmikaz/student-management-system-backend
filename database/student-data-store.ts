@@ -3,14 +3,14 @@ import {Student} from "../model/Student";
 
 const prisma =new PrismaClient();
 
-export async function StudentAdd(c: Student ){
+export async function StudentAdd(s: Student ){
     try{
         const newStudent  = await prisma.student.create({
             data:{
-                name: c.name,
-                nic: c.nic,
-                email: c.email,
-                phone: c.phone
+                name: s.name,
+                nic: s.nic,
+                email: s.email,
+                phone: s.phone
             }
 
         })
@@ -28,15 +28,15 @@ export async function getAllStudents(){
         console.log("error getting students from prisma data",err);
     }
 }
-export async function StudentUpdate(email: string, c: Student){
+export async function StudentUpdate(email: string, s: Student){
     try{
         await prisma.student.update({
-            where:{ email : c.email},
+            where:{ email : s.email},
             data:{
-                name: c.name,
-                nic: c.nic,
-                email: c.email,
-                phone: c.phone
+                name: s.name,
+                nic: s.nic,
+                email: s.email,
+                phone: s.phone
 
             }
         })
